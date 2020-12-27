@@ -1,0 +1,26 @@
+.circles--wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.circle {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 3;
+  border: 1px outset;
+  width: 10rem;
+  height: 10rem;
+  animation-duration: 100S;
+  animation-delay: .2s;
+  animation-iteration-count: infinite;
+  transition: 0.5s;
+  &--zone {
+    z-index: 0;
+  }
+}

@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -19,7 +18,25 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "oxum-circles": [
+        "dist/oxum-circles",
+
+      ],
+      "oxum-circles/assets": [
+        "dist/oxum-circles/assets"
+      ],
+      "oxum-circles/assets/*": [
+        "dist/oxum-circles/assets/*"
+      ],
+      "oxum-wallpaper": [
+        "dist/oxum-wallpaper",
+      ],
+      "oxum-loading-page": [
+        "dist/oxum-loading-page"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

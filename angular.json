@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/reset.css",
+              "src/styles.less",
+              "node_modules/primeflex/primeflex.min.css"
             ],
             "scripts": []
           },
@@ -122,6 +124,126 @@
             "production": {
               "devServerTarget": "paniagua-dev:serve:production"
             }
+          }
+        }
+      }
+    },
+    "oxum-circles": {
+      "projectType": "library",
+      "root": "projects/oxum-circles",
+      "sourceRoot": "projects/oxum-circles/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/oxum-circles/tsconfig.lib.json",
+            "project": "projects/oxum-circles/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/oxum-circles/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/oxum-circles/src/test.ts",
+            "tsConfig": "projects/oxum-circles/tsconfig.spec.json",
+            "karmaConfig": "projects/oxum-circles/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/oxum-circles/tsconfig.lib.json",
+              "projects/oxum-circles/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "oxum-wallpaper": {
+      "projectType": "library",
+      "root": "projects/oxum-wallpaper",
+      "sourceRoot": "projects/oxum-wallpaper/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/oxum-wallpaper/tsconfig.lib.json",
+            "project": "projects/oxum-wallpaper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/oxum-wallpaper/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/oxum-wallpaper/src/test.ts",
+            "tsConfig": "projects/oxum-wallpaper/tsconfig.spec.json",
+            "karmaConfig": "projects/oxum-wallpaper/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/oxum-wallpaper/tsconfig.lib.json",
+              "projects/oxum-wallpaper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "oxum-loading-page": {
+      "projectType": "library",
+      "root": "projects/oxum-loading-page",
+      "sourceRoot": "projects/oxum-loading-page/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/oxum-loading-page/tsconfig.lib.json",
+            "project": "projects/oxum-loading-page/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/oxum-loading-page/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/oxum-loading-page/src/test.ts",
+            "tsConfig": "projects/oxum-loading-page/tsconfig.spec.json",
+            "karmaConfig": "projects/oxum-loading-page/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/oxum-loading-page/tsconfig.lib.json",
+              "projects/oxum-loading-page/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
