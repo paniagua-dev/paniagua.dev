@@ -21,8 +21,7 @@
     ],
     "paths": {
       "oxum-circles": [
-        "dist/oxum-circles",
-
+        "dist/oxum-circles"
       ],
       "oxum-circles/assets": [
         "dist/oxum-circles/assets"
@@ -31,10 +30,14 @@
         "dist/oxum-circles/assets/*"
       ],
       "oxum-wallpaper": [
-        "dist/oxum-wallpaper",
+        "dist/oxum-wallpaper"
       ],
       "oxum-loading-page": [
         "dist/oxum-loading-page"
+      ],
+      "oxum-login-page": [
+        "dist/oxum-login-page/oxum-login-page",
+        "dist/oxum-login-page"
       ]
     }
   },
