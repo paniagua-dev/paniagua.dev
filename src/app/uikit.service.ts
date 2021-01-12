@@ -1,14 +1,29 @@
 import {Injectable} from '@angular/core';
 import UIkit from 'uikit';
+import UIkitTooltipOptions = UIkit.UIkitTooltipOptions;
 
-@Injectable({
-  providedIn: 'root'
-})
+/**
+ * THIS CLASS USE UIKIT FUNCTIONALITIES
+ */
+@Injectable()
 export class UikitService {
-  public fadeIn(element: string): void {
-    UIkit.scrollspy(element, {
-      cls: 'fadeIn',
-      delay: 80,
-    })
-  }
+    /**
+     * FadeIn add a the class 'fadeIn' when the element is in the view port
+     * @param classSelector
+     */
+    public fadeIn(classSelector: string): void {
+        UIkit.scrollspy(classSelector, {
+            cls: 'fadeIn',
+            delay: 80,
+        });
+    }
+
+    /**
+     * Add a tooltip to the specific element
+     * @param element : HTMLElement | string
+     * @param options : UIkitTooltipOptions
+     */
+    public tooltip(element: HTMLElement | string, options?: UIkitTooltipOptions): void {
+        UIkit.tooltip(element, options || {});
+    }
 }

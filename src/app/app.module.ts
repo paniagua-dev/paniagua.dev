@@ -2,10 +2,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {OxumCirclesModule} from 'oxum-circles';
 import {OxumWallpaperModule} from 'oxum-wallpaper';
-import {TooltipModule} from 'primeng/tooltip';
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {IconsGridComponent} from './icons-grid/icons-grid.component';
+import {UikitService} from './uikit.service';
 
 @NgModule({
     declarations: [
@@ -14,12 +13,10 @@ import {IconsGridComponent} from './icons-grid/icons-grid.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         OxumCirclesModule,
         OxumWallpaperModule,
-        TooltipModule,
     ],
-    providers: [],
+    providers: [UikitService],
     bootstrap: [AppComponent],
 })
 export class AppModule {
