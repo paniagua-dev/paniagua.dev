@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        @media all and (-ms-high-contrast: none) {
+            .ie-support {
+                min-height: 40px;
+                width: 100%;
+                background-color: #EC0867;
+                color: white;
+                font-size: 14px;
+                padding: 20px;
+                display: block !important;
+            }
+
+            .ie-support p {
+                white-space: normal;
+                margin-bottom: 12px;
+            }
+
+            .ie-support a {
+                color: white;
+                font-weight: bold;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="ie-support" style="display:none;">
+    <p>
+        <b>Your browser is outdated!</b>
+        <br/>
+        For the best experience and security reasons, we advise you to download the last version of your browser<br/>
+        for more, please
+        <a
+            href="https://www.microsoft.com/en-ch/microsoft-365/windows/end-of-ie-support?rtc=1"
+            title="support Edge"
+            target="_blank"
+        >
+            click here
+        </a>
+    </p>
+</div>
+<!-- CONTENT HERE -->
+</body>
+</html>
