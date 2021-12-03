@@ -31,10 +31,15 @@ module.exports = {
                         options: {
                             lessOptions: {
                                 strictMath: true,
+                                paths: [path.resolve(__dirname, 'src', 'styles')]
                             },
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
             },
         ]
     },
