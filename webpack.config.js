@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, distFolder),
-        filename: '[name].bundle.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -41,6 +41,11 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
+            {
+                test: /\.html$/i,
+                exclude: /nodes_modules|index.html/,
+                loader: 'html-loader',
+            }
         ]
     },
     resolve: {
