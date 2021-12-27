@@ -42,6 +42,10 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.html$/i,
                 exclude: /nodes_modules|index.html/,
                 loader: 'html-loader',
@@ -54,7 +58,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/index.html"),
-            title: packageJson.name.toUpperCase()
+            title: packageJson.description
         })
     ],
     stats: 'none',
