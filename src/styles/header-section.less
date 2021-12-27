@@ -2,65 +2,105 @@
 .header-section {
   height: 100%;
   width: 100%;
-  display: flex;
   position: relative;
   color: @white;
 
   h1 {
+    @height: 65px;
     margin-bottom: 0.2rem;
-    font-size: 2rem;
-    @media (min-width: 1200px) {
-      font-size: 2vw;
-    }
+    font-size: 2.5vw;
+    white-space: nowrap;
+    height: @height;
+    line-height: 50px;
 
     span {
-      font-family: @font-secondary;
+      font-family: @font__secondary--name;
+      font-size: 3vw;
+      white-space: nowrap;
+      height: @height;
+      line-height: @height;
+    }
+
+    @media (max-width: @screen__small) {
+      font-size: 1.5rem;
+      span {
+        font-size: 2rem;
+      }
     }
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: 1.5vw;
+    margin-bottom: 1rem;
+    @media (max-width: @screen__small) {
+      font-size: 0.8rem;
+    }
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 1vw;
+    max-width: 270px;
+    line-height: 1.3rem;
   }
 
   &__pic {
     height: 100%;
-    width: 50%;
+    width: 100%;
     min-width: 200px;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     img {
+      transition: 600ms;
+      opacity: 0;
       height: 100%;
-      position: relative;
-      filter: opacity(60%);
-      transition: 0.6s;
+      position: absolute;
+      transition: 600ms;
 
-      &:hover {
+      &.enabled {
+        opacity: 1;
+        filter: opacity(50%);
+      }
+
+      &.enabled:hover {
         filter: opacity(100%);
+      }
+
+      @media (max-width: @screen__small--xs) {
+        right: -30%;
       }
     }
 
   }
 
   &__content {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     .section();
+    position: relative;
+    z-index: 3;
+    @media (max-width: @screen__small) {
+      width: 100%;
+    }
 
     button {
       max-width: 150px;
       margin-top: 2rem;
+      @media (max-width: @screen__small--xs) {
+        width: 100%;
+        max-width: 100%;
+      }
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: @screen__small--xs) {
       padding-left: 8%;
+      padding-right: 8%;
     }
   }
 }
