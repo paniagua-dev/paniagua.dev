@@ -8,7 +8,8 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, distFolder),
-        filename: '[name].js'
+        filename: '[name].js',
+        clean: true
     },
     module: {
         rules: [
@@ -64,7 +65,7 @@ module.exports = {
     stats: 'none',
     mode: 'development',
     devServer: {
-        open: true,
+        open: false,
         static: path.resolve(__dirname, distFolder),
         port: 4000,
     }

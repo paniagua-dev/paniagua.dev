@@ -1,36 +1,15 @@
 import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import './main.less';
 import {Core} from './ts/core';
 import {TextAnimationDirective} from './ts/text-animation-directive';
+import {headerTimeline} from './ts/timelines/header.timeline';
 
 
-const gsapAnimations = {
-    duration: 1.5,
-    opacity: 0,
-    delay: 0.5,
-    stagger: -0.2,
-    force3D: true,
-};
+const timeline = headerTimeline;
 
-const core = new Core();
-
+gsap.registerPlugin(ScrollTrigger);
 window.onload = () => {
-    gsap.from('.animate-text', {
-        ...gsapAnimations,
-        x: -200,
-        onStart: () => {
-            setTimeout(() => new TextAnimationDirective(), 1000);
-            core.getElement('profile-pic').classList.add('enabled');
-        },
-    });
-    gsap.from('.animate-button', {
-        ...gsapAnimations,
-        delay: gsapAnimations.duration,
-        duration: 0.2,
-        onComplete: () => {
-            setTimeout(() => {
-                core.getElement('contact-button').classList.add('active');
-            }, 1000);
-        },
-    });
+
+
 };

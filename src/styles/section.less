@@ -1,24 +1,19 @@
 
-.header-section {
-  height: 100%;
-  width: 100%;
+.section {
   position: relative;
   color: @white;
+  .section();
 
   h1 {
-    @height: 65px;
+    @font-size: 4.5vw;
     margin-bottom: 0.2rem;
-    font-size: 2.5vw;
+    font-size: @font-size;
     white-space: nowrap;
-    height: @height;
-    line-height: 50px;
 
     span {
       font-family: @font__secondary--name;
-      font-size: 3vw;
+      font-size: @font-size + 0.5;
       white-space: nowrap;
-      height: @height;
-      line-height: @height;
     }
 
     @media (max-width: @screen__small) {
@@ -49,23 +44,18 @@
     min-width: 200px;
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
 
-    img {
-      transition: 600ms;
+    &__profile {
+      transition: 1000ms;
       opacity: 0;
       height: 100%;
       position: absolute;
-      transition: 600ms;
+      filter: opacity(80%);
 
-      &.enabled {
-        opacity: 1;
-        filter: opacity(50%);
-      }
-
-      &.enabled:hover {
+      &:hover {
         filter: opacity(100%);
       }
 
@@ -82,16 +72,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    .section();
     position: relative;
     z-index: 3;
+    pointer-events: none;
     @media (max-width: @screen__small) {
       width: 100%;
     }
 
     button {
       max-width: 150px;
-      margin-top: 2rem;
+      margin-top: 3rem;
       @media (max-width: @screen__small--xs) {
         width: 100%;
         max-width: 100%;

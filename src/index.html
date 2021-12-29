@@ -46,19 +46,43 @@
         </a>
     </p>
 </div>
+<div
+    class="loading-overlay"
+    style="
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    "
+>loading...
+</div>
 <main>
-    <section class="header-section">
-        <div class="header-section__content">
+    <section class="section">
+        <div class="section__content header">
             <div class="content">
                 <h1 class="animate-text">Ingénieur <span text-animation></span></h1>
-                <h2 class="animate-text">Applications Web et mobiles</h2>
-                <p class="animate-text">Développeur d'applications et sites Web évolutifs et modernes</p>
-                <button class="animate-button" contact-button>Contact</button>
+                <h2 class="animate-text">Développeur d'applications Web et mobiles</h2>
+                <p class="animate-text">Commençons ensemble à ton projet digital</p>
+                <button class="animate-button" contact-button>Commencer</button>
             </div>
         </div>
-
-        <div profile-ambient-light class="header-section__pic">
-            <img profile-pic src="<%=require('./assets/profile.jpg')%>" alt=""/>
+        <div class="section__content contact">
+            <div class="content">
+                <h1 class="animate-text">Hello.</h1>
+                <h2 class="animate-text">julio<span><span class="hide">im not a robot</span>@</span>paniagua.ch</h2>
+                <p class="animate-text">Je m'appelle Julio, développeur depuis 10 ans spécialisé dans le Front-end</p>
+            </div>
+        </div>
+        <div profile-ambient-light class="section__pic">
+            <img profile-pic class="section__pic__profile" src="<%=require('./assets/profile.jpg')%>" alt=""/>
         </div>
     </section>
 </main>
