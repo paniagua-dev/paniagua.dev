@@ -1,42 +1,80 @@
-@font__primary--name: "primary";
-@font__primary__path--regular: "../assets/fonts/Roboto/Roboto-Regular.ttf";
-@font__primary__path--bold: "../assets/fonts/Roboto/Roboto-Bold.ttf";
-@font__primary__path--medium: "../assets/fonts/Roboto/Roboto-Medium.ttf";
-@font__secondary--name: "secondary";
-@font__secondary__path--regular: "../assets/fonts/Vujahday_Script/VujahdayScript-Regular.ttf";
-@font__secondary__path--bold: "../assets/fonts/Vujahday_Script/VujahdayScript-Regular.ttf";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/brands";
+
 @font-face {
-  font-family: @font__primary--name;
-  src: url(@font__primary__path--regular);
-  src: url(@font__primary__path--regular) format("truetype");
+  font-family: @primary__font--name;
+  src: url(@primary__font__path--regular);
+  src: url(@primary__font__path--regular) format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: @font__primary--name;
-  src: url(@font__primary__path--bold);
-  src: url(@font__primary__path--bold) format("truetype");
+  font-family: @primary__font--name;
+  src: url(@primary__font__path--bold);
+  src: url(@primary__font__path--bold) format("truetype");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: @font__primary--name;
-  src: url(@font__primary__path--medium);
-  src: url(@font__primary__path--medium) format("truetype");
+  font-family: @primary__font--name;
+  src: url(@primary__font__path--medium);
+  src: url(@primary__font__path--medium) format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: @font__secondary--name;
-  src: url(@font__secondary__path--regular);
-  src: url(@font__secondary__path--regular) format("truetype");
+  font-family: @secondary__font--name;
+  src: url(@secondary__font__path--regular);
+  src: url(@secondary__font__path--regular) format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: @font__secondary--name;
-  src: url(@font__secondary__path--bold);
-  src: url(@font__secondary__path--bold) format("truetype");
+  font-family: @secondary__font--name;
+  src: url(@secondary__font__path--bold);
+  src: url(@secondary__font__path--bold) format("truetype");
   font-weight: bold;
 }
 
+.font {
+  &--secondary {
+    font-family: @secondary__font--name;
+  }
+}
+
+.icon {
+  .fa-icon;
+  .fab;
+  font-size: 1.8rem;
+  color: fade(@gray, 80%);
+
+  &.angular {
+    &:before {
+      content: @fa-var-angular;
+    }
+  }
+
+  &.js {
+    &:before {
+      content: @fa-var-js;
+    }
+  }
+
+  &.wordpress {
+    &:before {
+      content: @fa-var-wordpress;
+    }
+  }
+
+  &.html5 {
+    &:before {
+      content: @fa-var-html5;
+    }
+  }
+
+  &.css3 {
+    &:before {
+      content: @fa-var-css3;
+    }
+  }
+}

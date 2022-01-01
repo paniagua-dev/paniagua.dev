@@ -1,70 +1,7 @@
-
 .section {
-  position: relative;
-  color: @white;
-  .section();
-
-  h1 {
-    @font-size: 4.5vw;
-    margin-bottom: 0.2rem;
-    font-size: @font-size;
-    white-space: nowrap;
-
-    span {
-      font-family: @font__secondary--name;
-      font-size: @font-size + 0.5;
-      white-space: nowrap;
-    }
-
-    @media (max-width: @screen__small) {
-      font-size: 1.5rem;
-      span {
-        font-size: 2rem;
-      }
-    }
-  }
-
-  h2 {
-    font-size: 1.5vw;
-    margin-bottom: 1rem;
-    @media (max-width: @screen__small) {
-      font-size: 0.8rem;
-    }
-  }
-
-  p {
-    margin-top: 1vw;
-    max-width: 270px;
-    line-height: 1.3rem;
-  }
-
-  &__pic {
-    height: 100%;
-    width: 100%;
-    min-width: 200px;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    right: 0;
-
-    &__profile {
-      transition: 1000ms;
-      opacity: 0;
-      height: 100%;
-      position: absolute;
-      filter: opacity(80%);
-
-      &:hover {
-        filter: opacity(100%);
-      }
-
-      @media (max-width: @screen__small--xs) {
-        right: -30%;
-      }
-    }
-
-  }
+  height: 100%;
+  width: 100%;
+  min-width: 250px;
 
   &__content {
     width: 100%;
@@ -74,9 +11,44 @@
     flex-direction: column;
     position: relative;
     z-index: 3;
-    pointer-events: none;
+    padding: 0 0 0 5%;
+    color: @white;
     @media (max-width: @screen__small) {
       width: 100%;
+    }
+
+    h1 {
+      @font-size: 4.5vw;
+      margin-bottom: 0.2rem;
+      font-size: @font-size;
+      white-space: nowrap;
+
+      span {
+        font-family: @secondary__font--name;
+        font-size: @font-size + 0.5;
+        white-space: nowrap;
+      }
+
+      @media (max-width: @screen__small) {
+        font-size: 1.5rem;
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 1.5vw;
+      margin-bottom: 1rem;
+      @media (max-width: @screen__small) {
+        font-size: 0.8rem;
+      }
+    }
+
+    p {
+      margin-top: 1vw;
+      max-width: 300px;
+      line-height: 1.3rem;
     }
 
     button {

@@ -18,6 +18,40 @@
   }
 }
 
+.drop-effect--mixin() {
+}
+
+.drop-effect {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: inset 10px 10px 10px fade(@black, 15%), 0 5px 10px fade(@white, 15%), 5px 0 30px fade(@white, 15%), inset -10px -10px 15px fade(@white, 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @gray--light;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: shade(@white, 10%);
+  }
+
+  &:after {
+    top: 10px;
+    left: 19px;
+    width: 5px;
+    height: 5px;
+  }
+
+}
+
 .hide {
   display: none;
 }

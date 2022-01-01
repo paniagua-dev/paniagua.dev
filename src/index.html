@@ -5,6 +5,8 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <style>
         @media all and (-ms-high-contrast: none) {
             .ie-support {
@@ -64,27 +66,42 @@
     "
 >loading...
 </div>
-<main>
-    <section class="section">
-        <div class="section__content header">
-            <div class="content">
-                <h1 class="animate-text">Ingénieur <span text-animation></span></h1>
-                <h2 class="animate-text">Développeur d'applications Web et mobiles</h2>
-                <p class="animate-text">Commençons ensemble à ton projet digital</p>
-                <button class="animate-button" contact-button>Commencer</button>
+<main class="section">
+    <div profile-ambient-light class="profile__pic--wrapper">
+        <img profile-pic class="profile__pic" src="<%=require('./assets/profile.jpg')%>" alt=""/>
+    </div>
+    <header class="section__content header">
+        <h1 class="animate-text">Ingénieur <span text-animation></span></h1>
+        <h2 class="animate-text">Développeur d'applications Web et mobiles</h2>
+        <div class="section__content__logos">
+            <div class="drop-effect">
+                <ion-icon name="logo-angular" class="icon"></ion-icon>
+            </div>
+            <div class="drop-effect">
+                <ion-icon name="logo-javascript" class="icon"></ion-icon>
+            </div>
+            <div class="drop-effect">
+                <ion-icon name="logo-html5" class="icon"></ion-icon>
+            </div>
+            <div class="drop-effect">
+                <ion-icon name="logo-css3" class="icon"></ion-icon>
+            </div>
+            <div class="drop-effect">
+                <ion-icon name="logo-wordpress" class="icon"></ion-icon>
             </div>
         </div>
-        <div class="section__content contact">
-            <div class="content">
-                <h1 class="animate-text">Hello.</h1>
-                <h2 class="animate-text">julio<span><span class="hide">im not a robot</span>@</span>paniagua.ch</h2>
-                <p class="animate-text">Je m'appelle Julio, développeur depuis 10 ans spécialisé dans le Front-end</p>
-            </div>
-        </div>
-        <div profile-ambient-light class="section__pic">
-            <img profile-pic class="section__pic__profile" src="<%=require('./assets/profile.jpg')%>" alt=""/>
-        </div>
-    </section>
+        <button class="animate-button" contact-button>Contact</button>
+    </header>
+    <div class="section__content hello">
+        <h1 class="animate-text">Hello.</h1>
+        <p class="animate-text">
+            Je suis un développeur Front-end basé à Genève.<br/><br/>
+            Passionné, j'ai développé une dizaine d'applications Web ainsi que des identités digitales.
+        </p>
+        <h2 class="animate-text font--secondary">
+            julio<span><span class="hide">im not a robot</span>@</span>paniagua.ch
+        </h2>
+    </div>
 </main>
 </body>
 </html>

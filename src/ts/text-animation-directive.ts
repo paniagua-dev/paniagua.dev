@@ -56,7 +56,6 @@ export class TextAnimationDirective extends Core {
         }
 
         const timeout = setTimeout(() => {
-            console.log(i);
             this.tick();
             clearTimeout(timeout);
         }, delta);

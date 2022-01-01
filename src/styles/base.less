@@ -3,7 +3,7 @@
 }
 
 body, html {
-  font-family: @font__primary--name;
+  font-family: @primary__font--name;
   font-size: 13px;
   height: 100%;
   width: 100%;
@@ -12,12 +12,6 @@ body, html {
 
 h1 {
   font-size: 2rem;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-  min-width: 250px;
 }
 
 button {
@@ -30,7 +24,7 @@ button {
   pointer-events: all;
 
   &:hover, &.active {
-    box-shadow: 0 10px 65px 10px @primary--color;
+    box-shadow: 0 10px 65px 10px @primary__color;
     cursor: pointer;
   }
 }

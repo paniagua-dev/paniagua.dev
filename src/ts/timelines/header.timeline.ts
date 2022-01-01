@@ -4,33 +4,25 @@ import {TextAnimationDirective} from '../text-animation-directive';
 
 
 const core = new Core();
-
-export const headerTimeline = gsap.timeline()
-    .to('.loading-overlay',
-        {
-            filter: 'blur(200px)',
-            borderRadius: '50%',
-            delay: 1,
-        },
-    )
-    .to('.loading-overlay',
-        {
-            opacity: 0,
-        },
-    )
-    .from('.animate-text:nth-child(1)', {
+export const headerTimeline = () => gsap.timeline()
+    .from('.header .animate-text:nth-child(1)', {
         duration: 1,
         opacity: 0,
-        onStart: () => {
+        delay: 2,
+        onComplete: () => {
             new TextAnimationDirective();
         },
     })
-    .from('.animate-text:nth-child(2)', {
+    .from('.header .animate-text:nth-child(2)', {
         duration: 1,
         opacity: 0,
-        delay: 1.5,
+        delay: 1,
     })
-    .from(['.animate-button', '.animate-text:nth-child(3)'], {
+    .from('.header .drop-effect', {
+        opacity: 0,
+        stagger: 0.1,
+    })
+    .from(['.header .animate-button'], {
         scrollTrigger: {
             trigger: '.animate-button',
             toggleActions: 'play none none none',
@@ -46,7 +38,4 @@ export const headerTimeline = gsap.timeline()
         onComplete: () => {
             core.getElement('contact-button').classList.add('active');
         },
-    })
-    .from('.section__pic__profile', {
-        opacity: 0,
     });

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const distFolder = 'dist';
 const packageJson = require('./package.json');
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
                 test: /\.less$/i,
                 use: [
                     {
-                        loader: 'style-loader',
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
                         loader: 'css-loader',
@@ -43,7 +44,7 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif|svg|eps)$/i,
                 type: 'asset/resource',
             },
             {
@@ -60,7 +61,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/index.html"),
             title: packageJson.description
-        })
+        }),
+        new MiniCssExtractPlugin(),
     ],
     stats: 'none',
     mode: 'development',
