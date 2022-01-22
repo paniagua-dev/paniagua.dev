@@ -18,9 +18,6 @@
   }
 }
 
-.drop-effect--mixin() {
-}
-
 .drop-effect {
   position: relative;
   width: 60px;
@@ -32,13 +29,21 @@
   align-items: center;
   background-color: @gray--light;
 
+  @media (max-width: @screen__small--xs) {
+    width: 30px;
+    height: 30px;
+    ion-icon {
+      font-size: 0.9rem;
+    }
+  }
+
   &:before, &:after {
     content: '';
     position: absolute;
     top: 16px;
     left: 9px;
-    width: 8px;
-    height: 8px;
+    width: 13%;
+    height: 13%;
     border-radius: 50%;
     background: shade(@white, 10%);
   }
@@ -46,8 +51,8 @@
   &:after {
     top: 10px;
     left: 19px;
-    width: 5px;
-    height: 5px;
+    width: 8%;
+    height: 8%;
   }
 
 }

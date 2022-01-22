@@ -2,31 +2,51 @@ import {Core} from './core';
 
 
 export class TextAnimationDirective extends Core {
-    private textAnimation = ['Front-end', 'Angular', 'Wordpress'];
-    private period = 5000;
-    private tagName = 'text-animation';
+    private textAnimation = this.texts;
 
+    private tagName = 'text-animation';
+    private period = 5000;
     private loopNum = 0;
     private isDeleting: boolean;
     private letter = '';
     private displayOnlyFirstOne = true;
 
-    constructor() {
+    /**
+     * Pass to true when the animation of a text end;
+     */
+    public animationEnd = false;
+    private timeout: number;
+
+    constructor(private texts: string[] = ['Front-end', 'Angular', 'Wordpress']) {
         super();
-        this.init();
     }
 
-    private init(): void {
+    public init(): void {
         this.getElement(this.tagName);
         this.startAnimation();
     }
 
-    startAnimation() {
+    public startAnimation() {
         this.tick();
         this.isDeleting = false;
     }
 
-    tick() {
+    public setStrings(texts: string[]): void {
+        this.textAnimation = texts;
+    }
+
+    public reset(): void {
+        this.period = 5000;
+        this.loopNum = 0;
+        this.isDeleting = false;
+        this.letter = '';
+        this.displayOnlyFirstOne = true;
+        if (!!this.timeout) {
+            clearTimeout(this.timeout);
+        }
+    }
+
+    public tick() {
         const i = this.loopNum % this.textAnimation.length;
         const fullTxt = this.textAnimation[i];
 
@@ -46,11 +66,13 @@ export class TextAnimationDirective extends Core {
         if (!this.isDeleting && this.letter === fullTxt) {
             delta = this.period;
             this.isDeleting = true;
+            this.animationEnd = true;
             if (this.displayOnlyFirstOne) {
                 return;
             }
         } else if (this.isDeleting && this.letter === '') {
             this.isDeleting = false;
+            this.animationEnd = false;
             this.loopNum++;
             delta = 500;
         }
@@ -59,5 +81,7 @@ export class TextAnimationDirective extends Core {
             this.tick();
             clearTimeout(timeout);
         }, delta);
+
+        this.timeout = timeout;
     }
 }

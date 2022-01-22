@@ -4,13 +4,13 @@ import {TextAnimationDirective} from '../text-animation-directive';
 
 
 const core = new Core();
-export const headerTimeline = () => gsap.timeline()
+export const headerTimeline = (textAnimation: TextAnimationDirective) => gsap.timeline()
     .from('.header .animate-text:nth-child(1)', {
         duration: 1,
         opacity: 0,
         delay: 2,
         onComplete: () => {
-            new TextAnimationDirective();
+            textAnimation.init();
         },
     })
     .from('.header .animate-text:nth-child(2)', {

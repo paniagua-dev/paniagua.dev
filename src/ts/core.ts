@@ -15,6 +15,10 @@ export class Core {
     private getDomElement(attributeName: string): NodeListOf<Element> | HTMLCollectionOf<Element> {
         let elements: NodeListOf<Element> | HTMLCollectionOf<Element>;
 
+        if (/^\./.test(attributeName)) {
+            return document.getElementsByClassName(attributeName.replace(/\./, ''));
+        }
+
         elements = document.querySelectorAll(`[${attributeName}]`);
 
         if (!elements || elements?.length <= 0) {
@@ -27,12 +31,12 @@ export class Core {
         return elements;
     }
 
-    getElements(attributeName: string): NodeListOf<Element> | HTMLCollectionOf<Element> {
+    public getElements(attributeName: string): NodeListOf<Element> | HTMLCollectionOf<Element> {
         this.elements = this.getDomElement(attributeName);
         return this.elements;
     }
 
-    getElement(attributeName: string): Element {
+    public getElement(attributeName: string): Element {
         this.elements = this.getDomElement(attributeName);
         return this.nativeElement;
     }
