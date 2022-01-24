@@ -11,24 +11,14 @@ export const headerTimeline = () => gsap.timeline()
     })
     .from('.header .animate-text:nth-child(2)', {
         duration: 1,
-        opacity: 0,
-        delay: 1,
+        x: -800,
     })
     .from('.header .drop-effect', {
-        opacity: 0,
+        scale: 0,
+        rotate: 360,
         stagger: 0.1,
     })
     .from(['.header .animate-button'], {
-        scrollTrigger: {
-            trigger: '.animate-button',
-            toggleActions: 'play none none none',
-            onLeave: () => {
-                core.getElement('contact-button').classList.remove('active');
-            },
-            onEnterBack: () => {
-                core.getElement('contact-button').classList.add('active');
-            },
-        },
         duration: 1,
         opacity: 0,
         onComplete: () => {
