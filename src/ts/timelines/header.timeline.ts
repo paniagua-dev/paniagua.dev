@@ -1,17 +1,13 @@
 import {gsap} from 'gsap';
 import {Core} from '../core';
-import {TextAnimationDirective} from '../text-animation-directive';
 
 
 const core = new Core();
-export const headerTimeline = (textAnimation: TextAnimationDirective) => gsap.timeline()
-    .from('.header .animate-text:nth-child(1)', {
+export const headerTimeline = () => gsap.timeline()
+    .from('.header .engineer-text', {
         duration: 1,
         opacity: 0,
-        delay: 2,
-        onComplete: () => {
-            textAnimation.init();
-        },
+        delay: 5,
     })
     .from('.header .animate-text:nth-child(2)', {
         duration: 1,

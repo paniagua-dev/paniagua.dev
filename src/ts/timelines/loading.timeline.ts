@@ -1,7 +1,8 @@
 import {gsap} from 'gsap';
+import {TextAnimationDirective} from '../text-animation-directive';
 
 
-export const loadingTimeline = () => gsap.timeline()
+export const loadingTimeline = (textanimation: TextAnimationDirective) => gsap.timeline()
     .to('.loading-overlay',
         {
             filter: 'blur(200px)',
@@ -12,6 +13,9 @@ export const loadingTimeline = () => gsap.timeline()
     .to('.loading-overlay',
         {
             opacity: 0,
+            onComplete: () => {
+                textanimation.init();
+            },
         },
     );
 

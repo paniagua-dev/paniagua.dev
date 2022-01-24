@@ -21,12 +21,15 @@ if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
 window.onload = () => {
-    timelines.loading();
-    timelines.header(textAnimation);
-    timelines.hello();
+    timelines.loading(textAnimation);
+    timelines.header();
     forEach(core.getElements('.drop-effect'), (el: Element) => {
         el.addEventListener('mouseenter', () => {
             resetTextAnimation(new Array(upperFirst(el.getAttribute('name'))));
+        });
+
+        el.addEventListener('mouseleave', () => {
+            return null;
         });
     });
 };

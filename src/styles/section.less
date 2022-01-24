@@ -24,15 +24,18 @@
       white-space: nowrap;
 
       span {
-        font-family: @secondary__font--name;
-        font-size: @font-size + 0.5;
+        &.text-animation {
+          font-size: 5vw;
+          font-family: @secondary__font--name;
+        }
+
         white-space: nowrap;
       }
 
       @media (max-width: @screen__small) {
-        font-size: 1.5rem;
-        span {
-          font-size: 2rem;
+        font-size: 2.5rem;
+        span.text-animation {
+          font-size: 3.5rem;
         }
       }
     }
@@ -41,7 +44,7 @@
       font-size: 1.5vw;
       margin-bottom: 1rem;
       @media (max-width: @screen__small) {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
 
