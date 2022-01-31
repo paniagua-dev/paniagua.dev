@@ -70,8 +70,9 @@
     <div profile-ambient-light class="profile__pic--wrapper">
         <img profile-pic class="profile__pic" src="<%=require('./assets/profile.jpg')%>" alt=""/>
     </div>
-    <header class="section__content header">
-        <h1 class="animate-text"><span text-animation class="text-animation"></span> <span class="engineer-text">engineer</span>
+    <section class="section__content">
+        <h1 class="animate-text">
+            <span text-animation class="text-animation"></span> <span class="engineer-text">engineer</span>
         </h1>
         <h2 class="animate-text">Web & mobile application developer</h2>
         <div class="section__content__logos">
@@ -92,9 +93,45 @@
             </div>
         </div>
         <button class="animate-button" contact-button>
-            Contact
+            julio@paniagua.dev
         </button>
-    </header>
+    </section>
+    <footer class="footer">
+        <svg
+            class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"
+        >
+            <defs>
+                <path
+                    id="gentle-wave"
+                    d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0"/>
+                <use xlink:href="#gentle-wave" x="48" y="3"/>
+                <use xlink:href="#gentle-wave" x="48" y="5"/>
+                <use xlink:href="#gentle-wave" x="48" y="7"/>
+            </g>
+        </svg>
+        <!--        <ul class="social">-->
+        <!--            <li>-->
+        <!--                <a href="#">-->
+        <!--                    <ion-icon name="logo-github"></ion-icon>-->
+        <!--                </a>-->
+        <!--            </li>-->
+        <!--            <li>-->
+        <!--                <a href="#">-->
+        <!--                    <ion-icon name="logo-linkedin"></ion-icon>-->
+        <!--                </a>-->
+        <!--            </li>-->
+        <!--        </ul>-->
+        <p>Made with
+            <ion-icon name="heart"></ion-icon>
+            by
+            Julio
+        </p>
+    </footer>
 </main>
 </body>
 </html>
