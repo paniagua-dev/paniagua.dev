@@ -3,6 +3,30 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const distFolder = 'dist';
 const packageJson = require('./package.json');
+
+function styleLoader(mode) {
+    return {
+        test: /\.less$/i,
+        use: [
+            {
+                loader: MiniCssExtractPlugin.loader,
+            },
+            {
+                loader: 'css-loader',
+            },
+            {
+                loader: 'less-loader',
+                options: {
+                    lessOptions: {
+                        strictMath: true,
+                        paths: [path.resolve(__dirname, 'src', 'styles')]
+                    },
+                },
+            },
+        ],
+    };
+}
+
 module.exports = {
     entry: {
         main: path.join(__dirname, 'src/main.ts')
@@ -19,26 +43,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: ['ts-loader']
             },
-            {
-                test: /\.less$/i,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    {
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            lessOptions: {
-                                strictMath: true,
-                                paths: [path.resolve(__dirname, 'src', 'styles')]
-                            },
-                        },
-                    },
-                ],
-            },
+            styleLoader(),
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
@@ -66,9 +71,4 @@ module.exports = {
     ],
     stats: 'none',
     mode: 'development',
-    devServer: {
-        open: false,
-        static: path.resolve(__dirname, distFolder),
-        port: 4000,
-    }
 }
