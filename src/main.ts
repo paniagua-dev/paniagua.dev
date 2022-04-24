@@ -22,7 +22,7 @@ if (history.scrollRestoration) {
 }
 window.onload = () => {
     timelines.loading(textAnimation);
-    timelines.header();
+    timelines.header.start();
     forEach(core.getElements('.drop-effect'), (el: Element) => {
         el.addEventListener('mouseenter', () => {
             resetTextAnimation(new Array(upperFirst(el.getAttribute('name'))));

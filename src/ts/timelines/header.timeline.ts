@@ -4,7 +4,6 @@ import {Core} from '../core';
 
 const core = new Core();
 export const headerTimeline = () => {
-
     gsap.from('.engineer-text', {
         duration: 1,
         opacity: 0,
